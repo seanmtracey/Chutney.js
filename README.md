@@ -9,15 +9,15 @@ Include the scripts in your HTML document, The make calls like so...
 
 ##Methods
 
-### key(APIKEY)
+#### key(APIKEY)
 
 This should be the first method called before trying to use the library. It sets the api key that every request will use to get information from RT.
 
-### format(DATAFORMAT)
+#### format(DATAFORMAT)
 
 Sets the preferred data format you'd like responses in. Supported types are JSON and XML.
 
-### search(ARGUMENTS OBJECT, CALLBACK FUNCTION)
+#### search(ARGUMENTS OBJECT, CALLBACK FUNCTION)
 
 Allows you to search the RT database for movies. Pass the query parameters as an object.
 
@@ -29,15 +29,15 @@ page : INT //Which page of results would you like
 type : STRING //Search type. Default to "movies"
 pageLimit : INT //The number of results you'd like per page. Defaults to 10.
 
-### movie(MOVIE ID, CALLBACK FUNCTION)
+#### movie(MOVIE ID, CALLBACK FUNCTION)
 
 Gets extended information for a movie.
 
-### cast(MOVIE ID, CALLBACK FUNCTION)
+#### cast(MOVIE ID, CALLBACK FUNCTION)
 
 Gets the full cast list of a movie.
 
-### similar(ARGUMENTS OBJECT, CALLBACK FUNCTION)
+#### similar(ARGUMENTS OBJECT, CALLBACK FUNCTION)
 
 Gets films similar to this move.
 
