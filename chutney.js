@@ -16,7 +16,7 @@ var chutney = (function(){
 			return false;
 		}
 
-		dataFormat = format;
+		dataFormat = format.toLowerCase();
 
 	}
 	
@@ -26,20 +26,12 @@ var chutney = (function(){
 	}
 	
 	function search(args, callbackFunction){
-
-		console.log(args);
-
-		/*
-			{
-				type : "movies",
-				query : "Search Query",
-				pageLimit : 1,
-				page : 1
-			}
-		*/
 		
 		if(args.page === undefined) args.page = 1;
-		
+		if(args.type === undefined) args.type = "movies";
+		if(args.pageLimit === undefined) args.pageLimit = 10;
+		if(args.query === undefined) console.error("You've not defined a search term"); return false;
+
 		var requestURL = rootRTURL;
 
 		requestURL += args.type + "." + dataFormat + "?apikey=" + key + "&q=" + args.query + "&page_limit=" + args.pageLimit + "&page=" + args.page;
@@ -89,19 +81,14 @@ var chutney = (function(){
 		
 		
 		function getSimilarMovies(args, callbackFunction){
-			/*
-				{
-					id : MOVIEID,
-					limit : 5
-				}
-			*/
+			
 			if(!checkID(args.ID)) return false;
 			
 			if(args.limit === undefined) args.limit = 5;
 			
 			var requestURL = rootRTURL;
 			
-			requestURL += "movies/" + args.id + "/similar." + dataFormat + "?limit=" + args.limit + "&apikey=" + key;
+			requestURL += "movies/" + args.ID + "/similar." + dataFormat + "?limit=" + args.limit + "&apikey=" + key;
 			
 			if(callbackFunction === undefined || typeof callbackFunction !== "function") callbackFunction = success;
 			
