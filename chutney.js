@@ -30,8 +30,11 @@ var chutney = (function(){
 		if(args.page === undefined) args.page = 1;
 		if(args.type === undefined) args.type = "movies";
 		if(args.pageLimit === undefined) args.pageLimit = 10;
-		if(args.query === undefined) console.error("You've not defined a search term"); return false;
-
+		if(args.query === undefined) {
+			console.error("You've not defined a search term");
+			return false;
+		}
+		
 		var requestURL = rootRTURL;
 
 		requestURL += args.type + "." + dataFormat + "?apikey=" + key + "&q=" + args.query + "&page_limit=" + args.pageLimit + "&page=" + args.page;
