@@ -21,13 +21,13 @@ Sets the preferred data format you'd like responses in. Supported types are JSON
 
 Allows you to search the RT database for movies. Pass the query parameters as an object.
 
-Required values
+Required values  
 query : "MOVIE NAME"
 
-Optional Values
-page : INT //Which page of results would you like
-type : STRING //Search type. Default to "movies"
-pageLimit : INT //The number of results you'd like per page. Defaults to 10.
+Optional Values  
+page : INT //Which page of results would you like  
+type : STRING //Search type. Default to "movies"  
+pageLimit : INT //The number of results you'd like per page. Defaults to 10.  
 
 #### movie(MOVIE ID, CALLBACK FUNCTION)
 
@@ -41,8 +41,8 @@ Gets the full cast list of a movie.
 
 Gets films similar to this move.
 
-Required value
-id : Movie ID
+Required value  
+id : Movie ID  
 
-Optional values
-limit : INT //Number of results
+Optional values  
+limit : INT //Number of results  
